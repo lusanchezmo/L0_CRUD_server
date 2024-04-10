@@ -10,6 +10,8 @@ const { deletePersona } = require('../controllers/deletePersona')
 const { insertVivienda } = require('../controllers/insertVivienda')
 const { deleteVivienda } = require('../controllers/deleteVivienda')
 const { getDepartamentos } = require('../controllers/getDepartamentos')
+const { editPersona } = require('../controllers/editPersona')
+const { editVivienda} = require('../controllers/editVivienda')
 
 router.get('/getMunicipios', getMunicipios);
 router.get('/getViviendas', getViviendas);
@@ -21,5 +23,7 @@ router.post('/insertPersona', insertPersona);
 router.post('/deletePersona', deletePersona);
 router.post('/insertVivienda', insertVivienda);
 router.post('/deleteVivienda', deleteVivienda);
+router.post('/editPersona', editPersona);
+router.post('/editVivienda', editVivienda);
 
 module.exports = router;
