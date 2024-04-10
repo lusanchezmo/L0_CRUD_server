@@ -5,5 +5,6 @@ module.exports = {
     scriptGetMunicipios: "SELECT DEPARTAMENTO_ID,MUNICIPIO_ID,MUNICIPIO_NOMBRE,MUNICIPIO_AREA,MUNICIPIO_PRESUPUESTO FROM municipio;",
     scriptDeletePersona: "DELETE FROM `crud`.`persona` WHERE (`PERSONA_ID` = ?);",
     scriptDeleteRelacionDuenoVivienda: "DELETE FROM `persona_es_duena` WHERE (`VIVIENDA_ID` = ?)",
-    scriptDeleteVivienda: "DELETE FROM `vivienda` WHERE (`VIVIENDA_ID` = ?);"
+    scriptDeleteVivienda: "DELETE FROM `vivienda` WHERE (`VIVIENDA_ID` = ?);",
+    scriptDeletePersonaEsDuena: "DELETE FROM `persona_es_duena` WHERE (`PERSONA_ID` = ?);"
 }

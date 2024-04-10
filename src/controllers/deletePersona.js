@@ -6,6 +6,23 @@ module.exports.deletePersona = (req, res) => {
     const PERSONA_ID = req.body.PERSONA_ID;
 
     const consulta = SQLScripts.scriptDeletePersona
+    const consultaDeleteDueno = SQLScripts.scriptDeletePersonaEsDuena
+    
+    deletePersonaEsduena = () => {
+        dbConnection.query(consultaDeleteDueno, [PERSONA_ID], (err, results) => {
+            if (err) {
+                console.log(err)
+                res.send({ statusCode: 400, message: "wrong data" })
+            } else {
+                if (results) {
+                    console.log(results)
+                    deletePersona()
+                } else {
+                    res.json({ statusCode: 400, message: "wrong data" })
+                }
+            }
+        })
+    }
 
     deletePersona = () => {
         
@@ -24,5 +41,5 @@ module.exports.deletePersona = (req, res) => {
         })
     }
 
-    deletePersona()
+    deletePersonaEsduena()
 }
