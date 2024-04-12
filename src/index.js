@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: ["https://l0-crud-client.vercel.app"],
+    origin: ["https://l0-crud-client.onrender.com"],
     methods: ["GET", "POST"]
 }));
 
