@@ -2,7 +2,7 @@ require('dotenv').config({ path: './../.env' })
 const express = require('express')
 
 const app = express()
-const port = process.env.DB_PORT
+const port = process.env.DB_PORT || 3000
 
 const routes = require('./api/endPoints')
 const cors = require('cors');
@@ -18,6 +18,6 @@ app.use(cors({
 
 app.use('/', routes);
 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
     console.log(`Example app listening on port ${port}`)
 })
