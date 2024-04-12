@@ -11,12 +11,14 @@ module.exports.getMunicipios = (req, res) => {
             if (err) {
                 console.log(err)
                 res.send({ statusCode: 400, message: "wrong data" })
+                console.log('primer if');
             } else {
                 if (results) {
                     console.log(results)
                     res.json({ statusCode: 200, message: "success", data: results })
                 } else {
                     res.json({ statusCode: 400, message: "wrong data" })
+                    console.log('segundo if');
                 }
             }
         })
